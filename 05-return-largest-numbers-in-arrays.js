@@ -6,7 +6,7 @@ function largestOfFour(arr) {
     for (var n = 0; n < arr.length; n++) {
         //Largest number in n
         var largestNumber = arr[n][0];
-        //for loop finding n lenght
+        //for loop finding n length
         for (var sb = 1; sb < arr[n].length; sb++) {
             //if statement 
             if (arr[n][sb] > largestNumber) {
