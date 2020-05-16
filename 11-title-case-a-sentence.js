@@ -4,31 +4,29 @@ function titleCase(str) {
 
 titleCase("I'm a little tea pot");
 
-
-
 //Or:
 
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(x => x[0].toUpperCase() + x.slice(1)).join(' ');
+}
+
+titleCase("I'm a little tea pot");
+
+//Or
+function titleCase(str) {
+    return str.toLowerCase().replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+}
+titleCase("I'm a little tea pot");
 
 
+//Or
 
 function titleCase(str) {
-
-    //Split the string to an array of strings
-    let newArr = str.split(' ');
-
-    //map over each
-    newArr = newArr.map((word) => {
-
-        //firstLetter make to upper case
-        const firstLetter = word.charAt(0).toUpperCase();
-
-
-
+    var convertToArray = str.toLowerCase().split(" ");
+    var result = convertToArray.map(function (val) {
+        return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
     });
-
-
-
-    return newArr;
+    return result.join(" ");
 }
 
 titleCase("I'm a little tea pot");
